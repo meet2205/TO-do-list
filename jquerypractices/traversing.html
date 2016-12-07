@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Practices</title>
+    <script>
+        $(document).ready(function() {
+            $("button:first").click(function() {
+                $("div").contents().filter("p,a").wrap("<b></b>").css("color", "red");
+            })
+            $("button:eq(1)").click(function() {
+                $("li").each(function() {
+                    alert("This is: " + $(this).text());
+                })
+            })
+            $("button:last").click(function() {
+                if ($("p:last").parent().is("div")) {
+                    alert("yes it has parent as div");
+                }
+            })
+            $("button:eq(2)").click(function() {
+
+                $("li.stop").prevUntil("li.start").css("color", "blue");
+            })
+            $("a:last").click(function() {
+                $(this).attr("href", "http://www.w3schools.com/html/");
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h3>This is Traversing examples</h3>
+        <p>This is para 1</p>
+        <span>This is span element</span><br>
+        <br>
+        <a>This is a link option</a>
+        <p>This is para 2</p>
+    </div>
+    <button>Click</button>
+    <ul>Fruits:
+        <li>Apple</li>
+        <li class="start">Orange</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+        <li>Strawberry</li>
+        <li class="stop">Peach</li><br>
+        <button>Show each fruit in alert box</button><br><br>
+        <button>prev/next/until</button><br><br>
+        <button>is() alert</button><br><br>
+        <a>W3School</a>
+
+
+
+    </ul>
+
+</body>
+
+</html>

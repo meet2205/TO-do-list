@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Practices</title>
+    <script>
+        $(document).ready(function() {
+            $("button:eq(2)").on("click", function() {
+                //
+                $("div").animate({
+                    height: '250px',
+                    opacity: '0.4'
+                }, "slow")
+                $("div").animate({
+                    width: '250px',
+                    opacity: '0.8'
+                }, "slow")
+                $("div").animate({
+                    fontSize: '3em'
+                }, '3000')
+                $("div").animate({
+                    fontSize: '1em'
+                }, '3000')
+                $("div").animate({
+                    height: '100px',
+                    opacity: '0.4'
+                }, "slow")
+                $("div").animate({
+                    width: '100px',
+                    opacity: '0.8'
+                }, "slow")
+                $("div").animate({
+                    left: '250px',
+                    opacity: '0.5',
+                    width: '250px',
+                    height: '250px',
+                    fontSize: '3em'
+                }, "slow")
+            })
+            $("button:eq(1)").click(function() {
+                $("p").fadeToggle()
+            })
+            $("button:eq(0)").click(function() {
+                $("span").hide("3000", function() {
+                    alert("the span element is nw hidden!!")
+                })
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <button>using callback here.</button><br>
+    <span>This text will hide on clciking above button</span>
+    <p>This paragraph will fade in/out</p>
+    <button>Fade paragraph</button><br><br>
+
+    <button>Start Animation</button><br><br>
+    <div style="background:#a8dd21;height:100px;width:100px;position:absolute;">This is amazing !!</div><br><br><br>
+
+
+
+
+
+</body>
+
+</html>

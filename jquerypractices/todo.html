@@ -1,0 +1,83 @@
+<html>
+
+<head>
+
+    <title>simple todo list</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        "use strict"
+
+        $(document).ready(function() {
+
+            $("button").click(function() {
+                var tod = $("input[type=text]").val();
+                if (tod == '') {
+                    alert("pls enter the text");
+                } else {
+                    $("ul").append('<li>' + tod + '</li>');
+                    $("input[type=text]").val('');
+                }
+
+            });
+
+        });
+
+
+        $(document).on('dblclick', 'li', function() {
+
+
+            $(this).fadeOut("slow");
+
+        });
+
+    </script>
+
+    <style type="text/css">
+        h1 {
+            margin-left: 20px;
+        }
+        
+        #inp {
+            margin-left: 20px;
+            border-radius: 4px;
+        }
+        
+        .list {
+            background-color: #30a574;
+            width: 20%;
+            word-wrap: break-word;
+            border: 1px solid black;
+        }
+        
+        #btn {
+            background-color: #b26d0c;
+            border-radius: 4px;
+        }
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+    <div class="list">
+        <h1>To-Do list</h1>
+
+        <input type="text" id="inp" name="list" />
+
+        <button type="button" id="btn">Add</button>
+
+        <ul>
+
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

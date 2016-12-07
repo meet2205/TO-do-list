@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Practices</title>
+    <script>
+        $(document).ready(function() {
+            $("button:eq(0)").click(function() {
+                $("p:eq(0)").toggleClass("para1");
+            })
+            $("button:eq(1)").click(function() {
+                $("p:eq(1)").after("<p>Hello world</p>")
+            })
+            $("button:eq(2)").dblclick(function() {
+                $("p:eq(1)").append("<b>, and this is added text!!</b>")
+            })
+            $("button:eq(3)").click(function() {
+                $("p:eq(1)").clone().appendTo("body");
+            })
+            $("button:eq(4)").click(function() {
+                $("div").empty();
+            })
+            $("button:eq(5)").click(function() {
+                $(this).wrap("<div></div>");
+            })
+            $("button:eq(6)").click(function() {
+                $("p:eq(0)").wrapInner("<b></b>");
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <p>This is para 1</p>
+        <p>This is para 2</p><br>
+        <button>CLick</button>
+        <button>Add paragraph</button>
+        <button>add text</button>
+        <button>Clone para 2</button>
+    </div>
+    <button>Remove all</button>
+    <button>Wrap</button>
+    <button>Wrap Inner</button>
+
+
+</body>
+
+</html>

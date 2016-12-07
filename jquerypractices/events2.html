@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Practices</title>
+    <script>
+        i = 0;
+        $(document).ready(function() {
+
+            var objct = {
+                name: "Meet",
+                age: 25,
+                test: function() {
+                    $("p:eq(2)").after("Name is: " + this.name + "<br> Age: " + this.age);
+                }
+            }
+
+
+            //----
+
+            $("input:eq(0)").focus(function() {
+                $("span").css("display", "inline").fadeOut(3000);
+            });
+            $("div").focusin(function() {
+                $(this).css("background-color", "yellow");
+            })
+            $("p:eq(0)").hover(function() {
+                $(this).css("background-color", "yellow");
+            }, function() {
+                $(this).css("background-color", "green");
+            })
+            $("input:eq(1)").keydown(function() {
+                $("input:eq(1)").css("background-color", "yellow");
+            });
+            $("input:eq(1)").keyup(function() {
+                $("input:eq(1)").css("background-color", "pink");
+            });
+            $("input:eq(2)").keypress(function() {
+                $(".spa").text(i += 1);
+            })
+            $(document).mousemove(function(event) {
+                $("a").text(event.pageX + " , " + event.pageY);
+            })
+            $("p:gt(0)").on("click", function() {
+                $(this).animate({
+                    fontSize: "+=5",
+
+                });
+            })
+            $("button").click($.proxy(objct, "test"));
+        });
+
+    </script>
+    <style>
+        span {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <input type="text">
+        <span>This is span!</span>
+    </div>
+    <input>
+
+    <p>This is a new feature</p>
+    <input>
+    <span class="spa">0</span><br> <br>Mouse coordinates are:
+    <a></a>
+    <p>click here to increase its size.</p>
+    <button type="button">Print my info</button><br>
+    <p></p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Practices</title>
+    <script>
+        $(document).ready(function() {
+            $("p:first").on("click", function() {
+                alert("Paragraph is clicked!");
+            })
+            $("input:eq(0)").focus(function() {
+                $(this).val("hiii");
+            })
+            $("input:eq(0)").blur(function() {
+                $(this).css("background-color", "yellow")
+            });
+            $("div").on("dblclick", "button", function(event) {
+                $(event.delegateTarget).css("background-color", "#ad1f98");
+            })
+            $("div,h3,a").mouseenter(function(event) {
+                $(".spans").html("you entered: " + event.relatedTarget.nodeName);
+            })
+            $("p:gt(0),button:gt(0),a:gt(0),label").click(function(event) {
+                $("#spa").html("you clicked '" + event.target.nodeName + "' element");
+            })
+
+
+        })
+
+    </script>
+    <style>
+        #divi {
+            width: 25%;
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="divi">
+        <p>Click me</p>
+        <input type="text" value="write here"><br><br>
+        <button>change div color</button><br><br>
+        <span class="spans"></span><br>
+        <a>this is link</a>
+        <h3>heading</h3>
+    </div>
+    <hr>
+    <p>para 1 </p>
+    <label>This is a label</label><br>
+    <button>Here</button>
+    <p>para 2</p>
+    <span id="spa"></span>
+
+    <footer>this is footer</footer>
+
+
+
+
+
+</body>
+
+</html>

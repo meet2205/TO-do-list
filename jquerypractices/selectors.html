@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>JQuery Practices</title>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#divi").toggle();
+            });
+            //-----
+            $(".hillary").click(function() {
+                $(this).css("background-color", "yellow");
+            })
+            $(".plot").on("click", function() {
+                $(".donald,.hillary,span").toggle();
+            })
+            $("p:first").click(function() {
+                $(this).hide(1000);
+            })
+            $("p:nth-child(1)").click(function() {
+                //p:nth-last-child(1)
+                //p:only-child(1)
+                $(this).hide(1000);
+            })
+            $("table").click(function() {
+                $("tr:even").css("background-color", "green");
+            })
+            $("div + p").css("background-color", "yellow");
+            //div ~ p
+
+            $("ul li:eq(2)").css("color", "blue");
+            //tr:gt(3)
+            //p:lt(3)....//input:not(:empty)
+
+            $(":header").css("color", "blue");
+            //:animated....//:focus...//:contains('Hello')
+
+            $(":password").css("color", "#1fd18a");
+            $(":text").css("color", "#9bd11f"); //:focus
+
+
+
+
+
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="divi">
+        <h2 id="heading">Lets Start JQuery Practice</h2>
+        <p id="p1">Helloo, this is paragraph 1</p>
+
+        <p class="donald">Hii my name is donald</p>
+        <p class="hillary">Hii i am hillary</p>
+        <p>Dummy Para</p>
+        <span>This is Obama</span>
+    </div>
+    <p>Iquery is really good</p>
+    <div id="toons">
+        <p id="mickey">My best friend is Mickey.</p>
+        <p id="cartoon">I like cartoons</p>
+    </div>
+    <div class="hobby">
+        <p class="music"> I love music and sports.</p>
+        <a>Travelling, tennis, swimming are my hobbies</a>
+        <p>Life is amazing.</p>
+    </div>
+    <p>Iquery is really easy</p>
+    <div>
+        <p class="plot">Hide and show politicians</p>
+
+    </div>
+
+    <button>Hide/Show first div</button><br>
+
+
+    <hr>
+
+    <h3>Company's Employee info</h3>
+    <table border="1">
+        <tr>
+            <th>Company</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Berglunds snabbkop</td>
+            <td>Sweden</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Mexico</td>
+        </tr>
+        <tr>
+            <td>Ernst Handel</td>
+            <td>Austria</td>
+        </tr>
+    </table><br> <b>Enter Name:</b><input type="text">&nbsp; <b>Enter password:</b><input type="password">
+
+
+
+
+
+    <br>
+    <hr>
+    <p>Who is your favourite:</p>
+    <ul id="choose">
+        <li>Goofy</li>
+        <li>Mickey</li>
+        <li>Pluto</li>
+        <li>Donald</li>
+    </ul>
+
+
+</body>
+
+</html>
